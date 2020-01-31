@@ -11,7 +11,6 @@ handler = logging.StreamHandler()
 logger.setLevel(os.environ.get("LOG_LEVEL", logging.INFO))
 logger.addHandler(handler)
 
-
 scope = """
 playlist-read-private
 playlist-read-collaborative
