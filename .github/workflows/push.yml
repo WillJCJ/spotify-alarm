@@ -17,13 +17,11 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements/dev.txt
-    - name: Lint with flake8
-      run: |
-        pip install flake8
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --statistics
+    - name: Lint - Syntax Errors or Undefined Names
+      # stop the build if there are Python syntax errors or undefined names
+      run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+    - name: Lint - Warnings
+      run: flake8 . --count --exit-zero --statistics # TODO report this out somewhere 🤷‍♂️
     - name: Test with pytest
       run: |
         pytest
