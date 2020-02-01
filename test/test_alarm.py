@@ -1,4 +1,4 @@
-from alarm.alarm import (
+from alarm.controller import (
     Controller,
     scope,
 )
